@@ -23,11 +23,11 @@
   },
   "scripts": {
     "start": "tsc && yarn run create-schema && yarn run run-demo",
-    "build": "npx webpack serve --mode development",
+    "build": "yarn run run-demo",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-schema": "typescript-json-schema SWML.ts SWMLObject --out ./public/swml.schema.json && node ./build/scripts/addObjectMethod.js",
-    "run-demo": "npx webpack serve --mode development"
+    "run-demo": "npx webpack serve --open --mode development"
   },
   "eslintConfig": {
     "extends": [

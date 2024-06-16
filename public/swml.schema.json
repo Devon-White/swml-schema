@@ -394,10 +394,6 @@
           "type": "object"
         },
         {
-          "properties": {},
-          "type": "object"
-        },
-        {
           "$ref": "#/definitions/{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}"
         },
         {
@@ -974,6 +970,7 @@
       "type": "object"
     },
     "version": {
+      "const": "1.0.0",
       "type": "string"
     }
   },

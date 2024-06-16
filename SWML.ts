@@ -279,7 +279,6 @@ type MethodMap = {
 
 
 type NoArgMethod =
-    {} |
     "answer" |
     "hangup" |
     "record" |
@@ -290,13 +289,12 @@ type NoArgMethod =
     "return" |
     "stop_tap";
 
-type EmptyObject = {};
 
-type MethodUnion = EmptyObject | NoArgMethod | { [K in keyof MethodMap]?: MethodMap[K] };
+type MethodUnion = {} | NoArgMethod | { [K in keyof MethodMap]?: MethodMap[K] };
 
 // Type for  object
 export type SWMLObject = {
-    version: string;
+    version: "1.0.0"
     sections: {
         main: MethodUnion[];
         [key: string]: MethodUnion[];

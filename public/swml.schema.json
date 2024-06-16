@@ -1,974 +1,981 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "definitions": {
-        "AI": {
-            "properties": {
-                "SWAIG": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "agent": {
-                    "type": "string"
-                },
-                "engine": {
-                    "type": "string"
-                },
-                "global_data": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "hints": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "languages": {
-                    "items": {
-                        "additionalProperties": true,
-                        "properties": {},
-                        "type": "object"
-                    },
-                    "type": "array"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "params": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "post_prompt": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "post_prompt_auth_password": {
-                    "type": "string"
-                },
-                "post_prompt_auth_user": {
-                    "type": "string"
-                },
-                "post_prompt_url": {
-                    "type": "string"
-                },
-                "prompt": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "pronounce": {
-                    "items": {
-                        "additionalProperties": true,
-                        "properties": {},
-                        "type": "object"
-                    },
-                    "type": "array"
-                },
-                "voice": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "AI": {
+      "properties": {
+        "SWAIG": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
         },
-        "Answer": {
-            "properties": {
-                "codecs": {
-                    "type": "string"
-                },
-                "fsvars": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "max_duration": {
-                    "type": "number"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
+        "agent": {
+          "type": "string"
         },
-        "Cond": {
-            "properties": {
-                "items": {
-                    "items": {
-                        "additionalProperties": true,
-                        "properties": {},
-                        "type": "object"
-                    },
-                    "type": "array"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
+        "engine": {
+          "type": "string"
         },
-        "Connect": {
-            "properties": {
-                "answer_on_bridge": {
-                    "type": "boolean"
-                },
-                "call_state_events": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "call_state_url": {
-                    "type": "string"
-                },
-                "codecs": {
-                    "type": "string"
-                },
-                "confirm": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "confirm_timeout": {
-                    "type": "number"
-                },
-                "encryption": {
-                    "enum": [
-                        "forbidden",
-                        "mandatory",
-                        "optional"
-                    ],
-                    "type": "string"
-                },
-                "from": {
-                    "type": "string"
-                },
-                "fsvars": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "max_duration": {
-                    "type": "number"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                },
-                "serial_parallel": {
-                    "items": {
-                        "$ref": "#/definitions/ConnectSerialParallel"
-                    },
-                    "type": "array"
-                },
-                "session_timeout": {
-                    "type": "number"
-                },
-                "timeout": {
-                    "type": "number"
-                },
-                "to": {
-                    "type": "string"
-                },
-                "username": {
-                    "type": "string"
-                },
-                "webrtc_media": {
-                    "type": "boolean"
-                }
-            },
-            "type": "object"
+        "global_data": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
         },
-        "ConnectDevice": {
-            "properties": {
-                "call_state_events": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "call_state_url": {
-                    "type": "string"
-                },
-                "codecs": {
-                    "type": "string"
-                },
-                "confirm": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "confirm_timeout": {
-                    "type": "number"
-                },
-                "encryption": {
-                    "enum": [
-                        "forbidden",
-                        "mandatory",
-                        "optional"
-                    ],
-                    "type": "string"
-                },
-                "from": {
-                    "type": "string"
-                },
-                "fsvars": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "headers": {
-                    "items": {
-                        "additionalProperties": true,
-                        "properties": {},
-                        "type": "object"
-                    },
-                    "type": "array"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "password": {
-                    "type": "string"
-                },
-                "session_timeout": {
-                    "type": "number"
-                },
-                "timeout": {
-                    "type": "number"
-                },
-                "to": {
-                    "type": "string"
-                },
-                "username": {
-                    "type": "string"
-                },
-                "webrtc_media": {
-                    "type": "boolean"
-                }
-            },
-            "type": "object"
-        },
-        "ConnectSerialParallel": {
-            "properties": {
-                "devices": {
-                    "items": {
-                        "$ref": "#/definitions/ConnectDevice"
-                    },
-                    "type": "array"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Denoise": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Eval": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "params": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "Execute": {
-            "properties": {
-                "dest": {
-                    "type": "string"
-                },
-                "meta": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "on_return": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "params": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "result": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "Goto": {
-            "properties": {
-                "label": {
-                    "type": "string"
-                },
-                "max": {
-                    "type": "number"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "when": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Hangup": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "reason": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "If": {
-            "properties": {
-                "condition": {
-                    "type": "string"
-                },
-                "else": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "then": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "JoinRoom": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Label": {
-            "properties": {
-                "label": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "MethodUnion": {
-            "oneOf": [
-                {
-                    "$ref": "#/definitions/{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}"
-                },
-                {
-                    "enum": [
-                        {},
-                        "answer",
-                        "denoise",
-                        "hangup",
-                        "receive_fax",
-                        "record",
-                        "return",
-                        "stop_denoise",
-                        "stop_record_call",
-                        "stop_tap"
-                    ],
-                    "type": "string"
-                }
-            ]
-        },
-        "Play": {
-            "properties": {
-                "auto_answer": {
-                    "type": "boolean"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "say_gender": {
-                    "type": "string"
-                },
-                "say_language": {
-                    "type": "string"
-                },
-                "say_voice": {
-                    "type": "string"
-                },
-                "url": {
-                    "type": "string"
-                },
-                "urls": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "volume": {
-                    "type": "number"
-                }
-            },
-            "type": "object"
-        },
-        "Prompt": {
-            "properties": {
-                "digit_timeout": {
-                    "type": "number"
-                },
-                "initial_timeout": {
-                    "type": "number"
-                },
-                "max_digits": {
-                    "type": "number"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "play": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "speech_end_timeout": {
-                    "type": "number"
-                },
-                "speech_engine": {
-                    "enum": [
-                        "Deepgram",
-                        "Google",
-                        "Google.V2"
-                    ],
-                    "type": "string"
-                },
-                "speech_hints": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "speech_language": {
-                    "type": "string"
-                },
-                "speech_timeout": {
-                    "type": "number"
-                },
-                "terminators": {
-                    "type": "string"
-                },
-                "volume": {
-                    "type": "number"
-                }
-            },
-            "type": "object"
-        },
-        "ReceiveFax": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Record": {
-            "properties": {
-                "beep": {
-                    "type": "boolean"
-                },
-                "direction": {
-                    "enum": [
-                        "both",
-                        "listen",
-                        "speak"
-                    ],
-                    "type": "string"
-                },
-                "end_silence_timeout": {
-                    "type": "number"
-                },
-                "format": {
-                    "enum": [
-                        "mp3",
-                        "wav"
-                    ],
-                    "type": "string"
-                },
-                "initial_timeout": {
-                    "type": "number"
-                },
-                "input_sensitivity": {
-                    "type": "number"
-                },
-                "max_length": {
-                    "type": "number"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "status_url": {
-                    "type": "string"
-                },
-                "stereo": {
-                    "type": "boolean"
-                },
-                "terminators": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "RecordCall": {
-            "properties": {
-                "beep": {
-                    "type": "boolean"
-                },
-                "control_id": {
-                    "type": "string"
-                },
-                "direction": {
-                    "enum": [
-                        "both",
-                        "listen",
-                        "speak"
-                    ],
-                    "type": "string"
-                },
-                "end_silence_timeout": {
-                    "type": "number"
-                },
-                "format": {
-                    "enum": [
-                        "mp3",
-                        "wav"
-                    ],
-                    "type": "string"
-                },
-                "initial_timeout": {
-                    "type": "number"
-                },
-                "input_sensitivity": {
-                    "type": "number"
-                },
-                "max_length": {
-                    "type": "number"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "stereo": {
-                    "type": "boolean"
-                },
-                "terminators": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Request": {
-            "properties": {
-                "body": {},
-                "connect_timeout": {
-                    "type": "number"
-                },
-                "headers": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "method": {
-                    "enum": [
-                        "DELETE",
-                        "GET",
-                        "POST",
-                        "PUT",
-                        "delete",
-                        "get",
-                        "post",
-                        "put"
-                    ],
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "save_variables": {
-                    "type": "boolean"
-                },
-                "timeout": {
-                    "type": "number"
-                },
-                "url": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Return": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "SendDigits": {
-            "properties": {
-                "digits": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "SendFax": {
-            "properties": {
-                "document": {
-                    "type": "string"
-                },
-                "header_info": {
-                    "type": "string"
-                },
-                "identity": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "SendSMS": {
-            "properties": {
-                "body": {
-                    "type": "string"
-                },
-                "from_number": {
-                    "type": "string"
-                },
-                "media": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "region": {
-                    "type": "string"
-                },
-                "tags": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                },
-                "to_number": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Set": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "params": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "SipRefer": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "to": {
-                    "type": "string"
-                },
-                "to_uri": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "StopDenoise": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "StopRecordCall": {
-            "properties": {
-                "control_id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "StopTap": {
-            "properties": {
-                "control_id": {
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Switch": {
-            "properties": {
-                "case": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "default": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "variable": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Tap": {
-            "properties": {
-                "codec": {
-                    "enum": [
-                        "PCMA",
-                        "PCMU",
-                        "pcma",
-                        "pcmu"
-                    ],
-                    "type": "string"
-                },
-                "control_id": {
-                    "type": "string"
-                },
-                "direction": {
-                    "enum": [
-                        "both",
-                        "listen",
-                        "speak"
-                    ],
-                    "type": "string"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "rtp_ptime": {
-                    "type": "number"
-                },
-                "uri": {
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
-        "Transfer": {
-            "properties": {
-                "dest": {
-                    "type": "string"
-                },
-                "meta": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                },
-                "name": {
-                    "type": "string"
-                },
-                "params": {
-                    "additionalProperties": true,
-                    "properties": {},
-                    "type": "object"
-                }
-            },
-            "type": "object"
-        },
-        "Unset": {
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "vars": {
-                    "items": {
-                        "type": "string"
-                    },
-                    "type": "array"
-                }
-            },
-            "type": "object"
-        },
-        "{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}": {
-            "properties": {
-                "ai": {
-                    "$ref": "#/definitions/AI"
-                },
-                "answer": {
-                    "$ref": "#/definitions/Answer"
-                },
-                "cond": {
-                    "$ref": "#/definitions/Cond"
-                },
-                "connect": {
-                    "$ref": "#/definitions/Connect"
-                },
-                "denoise": {
-                    "$ref": "#/definitions/Denoise"
-                },
-                "eval": {
-                    "$ref": "#/definitions/Eval"
-                },
-                "execute": {
-                    "$ref": "#/definitions/Execute"
-                },
-                "goto": {
-                    "$ref": "#/definitions/Goto"
-                },
-                "hangup": {
-                    "$ref": "#/definitions/Hangup"
-                },
-                "if": {
-                    "$ref": "#/definitions/If"
-                },
-                "join_room": {
-                    "$ref": "#/definitions/JoinRoom"
-                },
-                "label": {
-                    "$ref": "#/definitions/Label"
-                },
-                "play": {
-                    "$ref": "#/definitions/Play"
-                },
-                "prompt": {
-                    "$ref": "#/definitions/Prompt"
-                },
-                "receive_fax": {
-                    "$ref": "#/definitions/ReceiveFax"
-                },
-                "record": {
-                    "$ref": "#/definitions/Record"
-                },
-                "record_call": {
-                    "$ref": "#/definitions/RecordCall"
-                },
-                "request": {
-                    "$ref": "#/definitions/Request"
-                },
-                "return": {
-                    "$ref": "#/definitions/Return"
-                },
-                "send_digits": {
-                    "$ref": "#/definitions/SendDigits"
-                },
-                "send_fax": {
-                    "$ref": "#/definitions/SendFax"
-                },
-                "send_sms": {
-                    "$ref": "#/definitions/SendSMS"
-                },
-                "set": {
-                    "$ref": "#/definitions/Set"
-                },
-                "sip_refer": {
-                    "$ref": "#/definitions/SipRefer"
-                },
-                "stop_denoise": {
-                    "$ref": "#/definitions/StopDenoise"
-                },
-                "stop_record_call": {
-                    "$ref": "#/definitions/StopRecordCall"
-                },
-                "stop_tap": {
-                    "$ref": "#/definitions/StopTap"
-                },
-                "switch": {
-                    "$ref": "#/definitions/Switch"
-                },
-                "tap": {
-                    "$ref": "#/definitions/Tap"
-                },
-                "transfer": {
-                    "$ref": "#/definitions/Transfer"
-                },
-                "unset": {
-                    "$ref": "#/definitions/Unset"
-                }
-            },
-            "type": "object"
-        }
-    },
-    "properties": {
-        "sections": {
-            "additionalProperties": {
-                "items": {
-                    "$ref": "#/definitions/MethodUnion"
-                },
-                "type": "array"
-            },
-            "properties": {
-                "main": {
-                    "items": {
-                        "$ref": "#/definitions/MethodUnion"
-                    },
-                    "type": "array"
-                }
-            },
-            "type": "object"
-        },
-        "version": {
+        "hints": {
+          "items": {
             "type": "string"
+          },
+          "type": "array"
+        },
+        "languages": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {},
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "post_prompt": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "post_prompt_auth_password": {
+          "type": "string"
+        },
+        "post_prompt_auth_user": {
+          "type": "string"
+        },
+        "post_prompt_url": {
+          "type": "string"
+        },
+        "prompt": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "pronounce": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {},
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "voice": {
+          "type": "string"
         }
+      },
+      "type": "object"
     },
-    "type": "object"
+    "Answer": {
+      "properties": {
+        "codecs": {
+          "type": "string"
+        },
+        "fsvars": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "max_duration": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Cond": {
+      "properties": {
+        "items": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {},
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Connect": {
+      "properties": {
+        "answer_on_bridge": {
+          "type": "boolean"
+        },
+        "call_state_events": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "call_state_url": {
+          "type": "string"
+        },
+        "codecs": {
+          "type": "string"
+        },
+        "confirm": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "confirm_timeout": {
+          "type": "number"
+        },
+        "encryption": {
+          "enum": [
+            "forbidden",
+            "mandatory",
+            "optional"
+          ],
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "fsvars": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "max_duration": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "serial_parallel": {
+          "items": {
+            "$ref": "#/definitions/ConnectSerialParallel"
+          },
+          "type": "array"
+        },
+        "session_timeout": {
+          "type": "number"
+        },
+        "timeout": {
+          "type": "number"
+        },
+        "to": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "webrtc_media": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ConnectDevice": {
+      "properties": {
+        "call_state_events": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "call_state_url": {
+          "type": "string"
+        },
+        "codecs": {
+          "type": "string"
+        },
+        "confirm": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "confirm_timeout": {
+          "type": "number"
+        },
+        "encryption": {
+          "enum": [
+            "forbidden",
+            "mandatory",
+            "optional"
+          ],
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "fsvars": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "headers": {
+          "items": {
+            "additionalProperties": true,
+            "properties": {},
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "session_timeout": {
+          "type": "number"
+        },
+        "timeout": {
+          "type": "number"
+        },
+        "to": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "webrtc_media": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "ConnectSerialParallel": {
+      "properties": {
+        "devices": {
+          "items": {
+            "$ref": "#/definitions/ConnectDevice"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Denoise": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Eval": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Execute": {
+      "properties": {
+        "dest": {
+          "type": "string"
+        },
+        "meta": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "on_return": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "params": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "result": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Goto": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "max": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "when": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Hangup": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "If": {
+      "properties": {
+        "condition": {
+          "type": "string"
+        },
+        "else": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "then": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "JoinRoom": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Label": {
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "MethodUnion": {
+      "anyOf": [
+        {
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "properties": {},
+          "type": "object"
+        },
+        {
+          "$ref": "#/definitions/{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}"
+        },
+        {
+          "enum": [
+            "answer",
+            "denoise",
+            "hangup",
+            "receive_fax",
+            "record",
+            "return",
+            "stop_denoise",
+            "stop_record_call",
+            "stop_tap",
+            {}
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    "Play": {
+      "properties": {
+        "auto_answer": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string"
+        },
+        "say_gender": {
+          "type": "string"
+        },
+        "say_language": {
+          "type": "string"
+        },
+        "say_voice": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "urls": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "volume": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "Prompt": {
+      "properties": {
+        "digit_timeout": {
+          "type": "number"
+        },
+        "initial_timeout": {
+          "type": "number"
+        },
+        "max_digits": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "play": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "speech_end_timeout": {
+          "type": "number"
+        },
+        "speech_engine": {
+          "enum": [
+            "Deepgram",
+            "Google",
+            "Google.V2"
+          ],
+          "type": "string"
+        },
+        "speech_hints": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "speech_language": {
+          "type": "string"
+        },
+        "speech_timeout": {
+          "type": "number"
+        },
+        "terminators": {
+          "type": "string"
+        },
+        "volume": {
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "ReceiveFax": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Record": {
+      "properties": {
+        "beep": {
+          "type": "boolean"
+        },
+        "direction": {
+          "enum": [
+            "both",
+            "listen",
+            "speak"
+          ],
+          "type": "string"
+        },
+        "end_silence_timeout": {
+          "type": "number"
+        },
+        "format": {
+          "enum": [
+            "mp3",
+            "wav"
+          ],
+          "type": "string"
+        },
+        "initial_timeout": {
+          "type": "number"
+        },
+        "input_sensitivity": {
+          "type": "number"
+        },
+        "max_length": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "status_url": {
+          "type": "string"
+        },
+        "stereo": {
+          "type": "boolean"
+        },
+        "terminators": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "RecordCall": {
+      "properties": {
+        "beep": {
+          "type": "boolean"
+        },
+        "control_id": {
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "both",
+            "listen",
+            "speak"
+          ],
+          "type": "string"
+        },
+        "end_silence_timeout": {
+          "type": "number"
+        },
+        "format": {
+          "enum": [
+            "mp3",
+            "wav"
+          ],
+          "type": "string"
+        },
+        "initial_timeout": {
+          "type": "number"
+        },
+        "input_sensitivity": {
+          "type": "number"
+        },
+        "max_length": {
+          "type": "number"
+        },
+        "name": {
+          "type": "string"
+        },
+        "stereo": {
+          "type": "boolean"
+        },
+        "terminators": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Request": {
+      "properties": {
+        "body": {},
+        "connect_timeout": {
+          "type": "number"
+        },
+        "headers": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "method": {
+          "enum": [
+            "DELETE",
+            "GET",
+            "POST",
+            "PUT",
+            "delete",
+            "get",
+            "post",
+            "put"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "save_variables": {
+          "type": "boolean"
+        },
+        "timeout": {
+          "type": "number"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Return": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SendDigits": {
+      "properties": {
+        "digits": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SendFax": {
+      "properties": {
+        "document": {
+          "type": "string"
+        },
+        "header_info": {
+          "type": "string"
+        },
+        "identity": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "SendSMS": {
+      "properties": {
+        "body": {
+          "type": "string"
+        },
+        "from_number": {
+          "type": "string"
+        },
+        "media": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "to_number": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Set": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "SipRefer": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        },
+        "to_uri": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "StopDenoise": {
+      "properties": {
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "StopRecordCall": {
+      "properties": {
+        "control_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "StopTap": {
+      "properties": {
+        "control_id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Switch": {
+      "properties": {
+        "case": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "default": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "variable": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Tap": {
+      "properties": {
+        "codec": {
+          "enum": [
+            "PCMA",
+            "PCMU",
+            "pcma",
+            "pcmu"
+          ],
+          "type": "string"
+        },
+        "control_id": {
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "both",
+            "listen",
+            "speak"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "rtp_ptime": {
+          "type": "number"
+        },
+        "uri": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "Transfer": {
+      "properties": {
+        "dest": {
+          "type": "string"
+        },
+        "meta": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        },
+        "name": {
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "properties": {},
+          "type": "object"
+        }
+      },
+      "type": "object"
+    },
+    "Unset": {
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "vars": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}": {
+      "properties": {
+        "ai": {
+          "$ref": "#/definitions/AI"
+        },
+        "answer": {
+          "$ref": "#/definitions/Answer"
+        },
+        "cond": {
+          "$ref": "#/definitions/Cond"
+        },
+        "connect": {
+          "$ref": "#/definitions/Connect"
+        },
+        "denoise": {
+          "$ref": "#/definitions/Denoise"
+        },
+        "eval": {
+          "$ref": "#/definitions/Eval"
+        },
+        "execute": {
+          "$ref": "#/definitions/Execute"
+        },
+        "goto": {
+          "$ref": "#/definitions/Goto"
+        },
+        "hangup": {
+          "$ref": "#/definitions/Hangup"
+        },
+        "if": {
+          "$ref": "#/definitions/If"
+        },
+        "join_room": {
+          "$ref": "#/definitions/JoinRoom"
+        },
+        "label": {
+          "$ref": "#/definitions/Label"
+        },
+        "play": {
+          "$ref": "#/definitions/Play"
+        },
+        "prompt": {
+          "$ref": "#/definitions/Prompt"
+        },
+        "receive_fax": {
+          "$ref": "#/definitions/ReceiveFax"
+        },
+        "record": {
+          "$ref": "#/definitions/Record"
+        },
+        "record_call": {
+          "$ref": "#/definitions/RecordCall"
+        },
+        "request": {
+          "$ref": "#/definitions/Request"
+        },
+        "return": {
+          "$ref": "#/definitions/Return"
+        },
+        "send_digits": {
+          "$ref": "#/definitions/SendDigits"
+        },
+        "send_fax": {
+          "$ref": "#/definitions/SendFax"
+        },
+        "send_sms": {
+          "$ref": "#/definitions/SendSMS"
+        },
+        "set": {
+          "$ref": "#/definitions/Set"
+        },
+        "sip_refer": {
+          "$ref": "#/definitions/SipRefer"
+        },
+        "stop_denoise": {
+          "$ref": "#/definitions/StopDenoise"
+        },
+        "stop_record_call": {
+          "$ref": "#/definitions/StopRecordCall"
+        },
+        "stop_tap": {
+          "$ref": "#/definitions/StopTap"
+        },
+        "switch": {
+          "$ref": "#/definitions/Switch"
+        },
+        "tap": {
+          "$ref": "#/definitions/Tap"
+        },
+        "transfer": {
+          "$ref": "#/definitions/Transfer"
+        },
+        "unset": {
+          "$ref": "#/definitions/Unset"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "properties": {
+    "sections": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/definitions/MethodUnion"
+        },
+        "type": "array"
+      },
+      "properties": {
+        "main": {
+          "items": {
+            "$ref": "#/definitions/MethodUnion"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "version": {
+      "type": "string"
+    }
+  },
+  "type": "object"
 }
-

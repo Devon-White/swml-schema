@@ -387,6 +387,28 @@
             },
             "type": "object"
         },
+        "MethodUnion": {
+            "oneOf": [
+                {
+                    "$ref": "#/definitions/{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}"
+                },
+                {
+                    "enum": [
+                        {},
+                        "answer",
+                        "denoise",
+                        "hangup",
+                        "receive_fax",
+                        "record",
+                        "return",
+                        "stop_denoise",
+                        "stop_record_call",
+                        "stop_tap"
+                    ],
+                    "type": "string"
+                }
+            ]
+        },
         "Play": {
             "properties": {
                 "auto_answer": {
@@ -923,198 +945,20 @@
                 }
             },
             "type": "object"
-        },
-        "{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}_1": {
-            "properties": {
-                "ai": {
-                    "$ref": "#/definitions/AI"
-                },
-                "answer": {
-                    "$ref": "#/definitions/Answer"
-                },
-                "cond": {
-                    "$ref": "#/definitions/Cond"
-                },
-                "connect": {
-                    "$ref": "#/definitions/Connect"
-                },
-                "denoise": {
-                    "$ref": "#/definitions/Denoise"
-                },
-                "eval": {
-                    "$ref": "#/definitions/Eval"
-                },
-                "execute": {
-                    "$ref": "#/definitions/Execute"
-                },
-                "goto": {
-                    "$ref": "#/definitions/Goto"
-                },
-                "hangup": {
-                    "$ref": "#/definitions/Hangup"
-                },
-                "if": {
-                    "$ref": "#/definitions/If"
-                },
-                "join_room": {
-                    "$ref": "#/definitions/JoinRoom"
-                },
-                "label": {
-                    "$ref": "#/definitions/Label"
-                },
-                "play": {
-                    "$ref": "#/definitions/Play"
-                },
-                "prompt": {
-                    "$ref": "#/definitions/Prompt"
-                },
-                "receive_fax": {
-                    "$ref": "#/definitions/ReceiveFax"
-                },
-                "record": {
-                    "$ref": "#/definitions/Record"
-                },
-                "record_call": {
-                    "$ref": "#/definitions/RecordCall"
-                },
-                "request": {
-                    "$ref": "#/definitions/Request"
-                },
-                "return": {
-                    "$ref": "#/definitions/Return"
-                },
-                "send_digits": {
-                    "$ref": "#/definitions/SendDigits"
-                },
-                "send_fax": {
-                    "$ref": "#/definitions/SendFax"
-                },
-                "send_sms": {
-                    "$ref": "#/definitions/SendSMS"
-                },
-                "set": {
-                    "$ref": "#/definitions/Set"
-                },
-                "sip_refer": {
-                    "$ref": "#/definitions/SipRefer"
-                },
-                "stop_denoise": {
-                    "$ref": "#/definitions/StopDenoise"
-                },
-                "stop_record_call": {
-                    "$ref": "#/definitions/StopRecordCall"
-                },
-                "stop_tap": {
-                    "$ref": "#/definitions/StopTap"
-                },
-                "switch": {
-                    "$ref": "#/definitions/Switch"
-                },
-                "tap": {
-                    "$ref": "#/definitions/Tap"
-                },
-                "transfer": {
-                    "$ref": "#/definitions/Transfer"
-                },
-                "unset": {
-                    "$ref": "#/definitions/Unset"
-                }
-            },
-            "type": "object"
         }
     },
     "properties": {
         "sections": {
             "additionalProperties": {
                 "items": {
-                    "anyOf": [
-                        {
-                            "$ref": "#/definitions/{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}"
-                        },
-                        {
-                            "enum": [
-                                "ai",
-                                "answer",
-                                "cond",
-                                "connect",
-                                "denoise",
-                                "eval",
-                                "execute",
-                                "goto",
-                                "hangup",
-                                "if",
-                                "join_room",
-                                "label",
-                                "play",
-                                "prompt",
-                                "receive_fax",
-                                "record",
-                                "record_call",
-                                "request",
-                                "return",
-                                "send_digits",
-                                "send_fax",
-                                "send_sms",
-                                "set",
-                                "sip_refer",
-                                "stop_denoise",
-                                "stop_record_call",
-                                "stop_tap",
-                                "switch",
-                                "tap",
-                                "transfer",
-                                "unset"
-                            ],
-                            "type": "string"
-                        }
-                    ]
+                    "$ref": "#/definitions/MethodUnion"
                 },
                 "type": "array"
             },
             "properties": {
                 "main": {
                     "items": {
-                        "anyOf": [
-                            {
-                                "$ref": "#/definitions/{transfer?:Transfer;execute?:Execute;return?:Return;label?:Label;goto?:Goto;request?:Request;switch?:Switch;if?:If;cond?:Cond;answer?:Answer;hangup?:Hangup;play?:Play;prompt?:Prompt;record?:Record;record_call?:RecordCall;stop_record_call?:StopRecordCall;connect?:Connect;join_room?:JoinRoom;denoise?:Denoise;stop_denoise?:StopDenoise;receive_fax?:ReceiveFax;send_fax?:SendFax;sip_refer?:SipRefer;set?:Set;eval?:Eval;unset?:Unset;tap?:Tap;stop_tap?:StopTap;send_digits?:SendDigits;send_sms?:SendSMS;ai?:AI;}_1"
-                            },
-                            {
-                                "enum": [
-                                    "ai",
-                                    "answer",
-                                    "cond",
-                                    "connect",
-                                    "denoise",
-                                    "eval",
-                                    "execute",
-                                    "goto",
-                                    "hangup",
-                                    "if",
-                                    "join_room",
-                                    "label",
-                                    "play",
-                                    "prompt",
-                                    "receive_fax",
-                                    "record",
-                                    "record_call",
-                                    "request",
-                                    "return",
-                                    "send_digits",
-                                    "send_fax",
-                                    "send_sms",
-                                    "set",
-                                    "sip_refer",
-                                    "stop_denoise",
-                                    "stop_record_call",
-                                    "stop_tap",
-                                    "switch",
-                                    "tap",
-                                    "transfer",
-                                    "unset"
-                                ],
-                                "type": "string"
-                            }
-                        ]
+                        "$ref": "#/definitions/MethodUnion"
                     },
                     "type": "array"
                 }

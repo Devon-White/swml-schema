@@ -276,11 +276,25 @@ type MethodMap = {
     "ai": AI;
 };
 
+type NoArgMethod =
+    "answer" |
+    "hangup" |
+    "record" |
+    "stop_record_call" |
+    "denoise" |
+    "stop_denoise" |
+    "receive_fax" |
+    "return" |
+    "stop_tap";
+
+
+type MethodUnion = NoArgMethod | { [K in keyof MethodMap]?: MethodMap[K] };
+
 // Type for  object
-export type  SWMLObject = {
+export type SWMLObject = {
     version: string;
     sections: {
-        main: (keyof MethodMap | { [K in keyof MethodMap]?: MethodMap[K] })[];
-        [key: string]: (keyof MethodMap | { [K in keyof MethodMap]?: MethodMap[K] })[];
+        main: MethodUnion[];
+        [key: string]: MethodUnion[];
     };
 };

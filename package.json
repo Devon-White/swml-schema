@@ -26,7 +26,7 @@
     "build": "yarn run run-demo",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "create-schema": "typescript-json-schema SWML.ts SWMLObject --out ./public/swml.schema.json && node ./build/scripts/addObjectMethod.js",
+    "create-schema": "typescript-json-schema src/swml/index.ts SWMLObject --out ./public/swml.schema.json && node ./build/scripts/addObjectMethod.js",
     "run-demo": "npx webpack serve --open --mode development"
   },
   "eslintConfig": {

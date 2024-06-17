@@ -8,11 +8,11 @@ const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
 
 // Function to modify the schema
 function modifySchema(schema: any) {
-    if (schema.definitions && schema.definitions.MethodUnion) {
-        const methodUnion = schema.definitions.MethodUnion;
+    if (schema.definitions && schema.definitions.SWMLMethod) {
+        const swmlMethod = schema.definitions.SWMLMethod;
 
-        if (methodUnion.anyOf && Array.isArray(methodUnion.anyOf)) {
-            methodUnion.anyOf.forEach((item: any) => {
+        if (swmlMethod.anyOf && Array.isArray(swmlMethod.anyOf)) {
+            swmlMethod.anyOf.forEach((item: any) => {
                 if (item.enum && Array.isArray(item.enum)) {
                     // Append an empty object to the enum array
                     item.enum.push({});

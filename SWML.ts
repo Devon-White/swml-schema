@@ -1626,7 +1626,7 @@ type MethodUnion = NoArgMethod | SWMLMethod
  * @description The main object that includes the version and sections containing instructions.
  */
 export type SWMLObject = {
-    version: ["1.0.0"];
+    version: "1.0.0";
     sections: {
         main: MethodUnion[];
         [key: string]: MethodUnion[];

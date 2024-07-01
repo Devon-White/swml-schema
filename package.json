@@ -22,8 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "tsc && yarn run create-schema && yarn run run-demo",
-    "build": "yarn run run-demo",
+    "start": "yarn run run-demo",
+    "build": "tsc && yarn run create-schema && yarn run run-demo",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-schema": "typescript-json-schema src/swml/index.ts SWMLObject --out ./public/swml.schema.json && node ./build/scripts/addObjectMethod.js",
